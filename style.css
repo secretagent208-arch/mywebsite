@@ -99,3 +99,34 @@ button {
   margin-left: 10px;
   text-decoration: none;
 }
+.navbar {
+  background: black;
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#search {
+  padding: 7px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.menu a:hover {
+  color: #25D366;
+}
