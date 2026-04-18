@@ -61,3 +61,17 @@ button {
   transform: scale(1.05);
   transition: 0.2s;
 }
+.navbar {
+  background: black;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+}
