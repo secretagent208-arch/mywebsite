@@ -26,3 +26,10 @@ function addToCart(name, price) {
   updateCart();
   alert(name + " added to cart!");
 }
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  document.getElementById("cartCount").innerText = cart.length;
+  alert(name + " added to cart!");
+}
