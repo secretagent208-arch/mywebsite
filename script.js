@@ -6,3 +6,23 @@ function buyNow(product) {
 
   window.location.href = url;
 }
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name: name, price: price });
+  alert(name + " added to cart!");
+  console.log(cart);
+}
+function updateCart() {
+  let cartDiv = document.getElementById("cartItems");
+  cartDiv.innerHTML = "";
+
+  cart.forEach(item => {
+    cartDiv.innerHTML += "<p>" + item.name + " - " + item.price + " BDT</p>";
+  });
+}
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCart();
+  alert(name + " added to cart!");
+}
