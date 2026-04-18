@@ -30,6 +30,29 @@ let cart = [];
 
 function addToCart(name, price) {
   cart.push({ name, price });
+
+  document.getElementById("cartCount").innerText = cart.length;
+
+  alert(name + " added to cart!");
+}
+
+function displayCart() {
+  let cartItems = document.getElementById("cartItems");
+  let total = 0;
+
+  cartItems.innerHTML = "";
+
+  cart.forEach(item => {
+    cartItems.innerHTML += "<p>" + item.name + " - " + item.price + " BDT</p>";
+    total += item.price;
+  });
+
+  document.getElementById("total").innerText = "Total: " + total + " BDT";
+}
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
   document.getElementById("cartCount").innerText = cart.length;
   alert(name + " added to cart!");
 }
