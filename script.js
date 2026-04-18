@@ -33,3 +33,6 @@ function addToCart(name, price) {
   document.getElementById("cartCount").innerText = cart.length;
   alert(name + " added to cart!");
 }
+function addToCart() {
+  alert("JS is working");
+}
