@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>My Online Shop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tech Store</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="navbar">
-  <div class="logo">🛒 MyShop</div>
+  <!-- Navbar -->
 
-  <input type="text" id="search" placeholder="Search products...">
+  <nav>
 
-  <div class="menu">
-    <a href="index.html">Home</a>
-    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
-  </div>
-</div>
+    <div class="logo">
+      TechStore
+    </div>
 
-<div class="banner">
-  <h1>Welcome to My Online Shop</h1>
-  <p>Best Products • Best Price</p>
-</div>
+    <ul>
 
-<div class="products">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
 
-  <!-- PRODUCT 1 -->
-  <div class="card">
-    <img src="cwt-12004.png" alt="Product Image" width="200">
+    </ul>
 
-    <h3>Product 1</h3>
-    <p>Price: 500 BDT</p>
+  </nav>
 
-    <button onclick="buyNow('Product 1')">Buy Now</button>
-    <button onclick="addToCart('Product 1', 500)">Add to Cart</button>
-  </div>
 
-</div>
+  <!-- Hero Section -->
 
-<script>
-let cartCount = 0;
+  <section class="hero">
 
-function addToCart(name, price){
-  cartCount++;
-  document.getElementById("cartCount").innerText = cartCount;
+    <div class="hero-text">
 
-  alert(name + " added to cart. Price: " + price + " BDT");
-}
+      <h1>Next Generation Earbuds</h1>
 
-function buyNow(name){
-  alert("Buying " + name);
-}
-</script>
+      <p>
+        Premium sound quality with modern design.
+      </p>
+
+      <button>
+        Shop Now
+      </button>
+
+    </div>
+
+    <div class="hero-image">
+
+      <img src="earbuds.jpg" alt="Earbuds">
+
+    </div>
+
+  </section>
 
 </body>
+
 </html>
