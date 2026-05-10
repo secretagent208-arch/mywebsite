@@ -1,5 +1,20 @@
 let cart = [];
 
+/* -----------------------------
+   LOAD CART (LOCAL STORAGE)
+------------------------------*/
+function loadCart() {
+  let data = localStorage.getItem("cart");
+  if (data) {
+    cart = JSON.parse(data);
+  }
+  updateCart();
+}
+loadCart();
+
+/* -----------------------------
+   ADD TO CART
+------------------------------*/
 function addToCart(name, price) {
 
   let item = cart.find(i => i.name === name);
@@ -13,6 +28,9 @@ function addToCart(name, price) {
   updateCart();
 }
 
+/* -----------------------------
+   UPDATE CART UI
+------------------------------*/
 function updateCart() {
 
   let cartItems = document.getElementById("cartItems");
@@ -34,19 +52,37 @@ function updateCart() {
   document.getElementById("total").innerText = "Total: " + total + " TK";
   document.getElementById("cartCount").innerText = count;
 
-  // mobile sync (safe)
+  // mobile sync
   let mobile = document.getElementById("cartCountMobile");
   if (mobile) mobile.innerText = count;
+
+  saveCart();
 }
 
+/* -----------------------------
+   SAVE CART (LOCAL STORAGE)
+------------------------------*/
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+/* -----------------------------
+   CART SIDEBAR TOGGLE
+------------------------------*/
 function toggleCart() {
-  document.getElementById("cartSidebar").classList.toggle("active");
+  let sidebar = document.getElementById("cartSidebar");
+  if (sidebar) {
+    sidebar.classList.toggle("active");
+  }
 }
 
+/* -----------------------------
+   WHATSAPP CHECKOUT
+------------------------------*/
 function checkoutWhatsApp() {
 
   let phone = "8801322911626";
-  let msg = "🛒 Order:\n\n";
+  let msg = "🛒 ORDER DETAILS\n-----------------\n\n";
   let total = 0;
 
   cart.forEach(i => {
@@ -57,22 +93,42 @@ function checkoutWhatsApp() {
   msg += "\n💰 Total: " + total + " TK";
 
   window.open(
-    "https://api.whatsapp.com/send?phone=" + phone + "&text=" + encodeURIComponent(msg),
+    "https://api.whatsapp.com/send?phone=" +
+    phone +
+    "&text=" +
+    encodeURIComponent(msg),
     "_blank"
   );
 }
 
+/* -----------------------------
+   DARK MODE TOGGLE
+------------------------------*/
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
 }
-document.getElementById("search").addEventListener("keyup", function () {
 
-  let value = this.value.toLowerCase();
-  let products = document.querySelectorAll(".product-card");
+/* -----------------------------
+   SEARCH FUNCTION (SAFE LOAD)
+------------------------------*/
+window.addEventListener("DOMContentLoaded", function () {
 
-  products.forEach(p => {
-    let text = p.innerText.toLowerCase();
-    p.style.display = text.includes(value) ? "block" : "none";
-  });
+  let search = document.getElementById("search");
+
+  if (search) {
+
+    search.addEventListener("keyup", function () {
+
+      let value = this.value.toLowerCase();
+      let products = document.querySelectorAll(".product-card");
+
+      products.forEach(p => {
+        let text = p.innerText.toLowerCase();
+        p.style.display = text.includes(value) ? "block" : "none";
+      });
+
+    });
+
+  }
 
 });
