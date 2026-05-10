@@ -159,3 +159,21 @@ button[onclick="checkoutWhatsApp()"] {
   
   cursor: pointer;
 }
+.dark {
+  background: #111;
+  color: white;
+}
+
+.dark nav {
+  background: #000;
+}
+
+.dark .product-card {
+  background: #222;
+  color: white;
+}
+
+.dark .cart-section {
+  background: #1a1a1a;
+  color: white;
+}
