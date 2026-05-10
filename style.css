@@ -177,3 +177,15 @@ button[onclick="checkoutWhatsApp()"] {
   background: #1a1a1a;
   color: white;
 }
+.open-cart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
