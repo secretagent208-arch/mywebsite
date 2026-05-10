@@ -4,60 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Tech Store</title>
-
+  <title>Tech Store Pro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <nav>
 
-  <div class="logo">
-    TechStore
-  </div>
+  <div class="logo">TechStore Pro</div>
 
   <div class="right-nav">
 
     <button onclick="toggleDarkMode()">🌙</button>
 
-    <div class="cart-icon">
-      🛒 Cart: <span id="cartCount">0</span>
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 <span id="cartCount">0</span>
     </div>
 
   </div>
 
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#products">Products</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-
 </nav>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
 
   <div class="hero-text">
-
-    <h1>Next Generation Earbuds</h1>
-
-    <p>Premium sound quality with modern design.</p>
-
-    <button>Shop Now</button>
-
+    <h1>Next Gen Tech Products</h1>
+    <p>Premium quality gadgets at best price</p>
+    <button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
   </div>
 
   <div class="hero-image">
-    <img src="earbuds.jpg" alt="Earbuds">
+    <img src="earbuds.jpg" alt="Product">
   </div>
 
 </section>
 
-<!-- ================= PRODUCTS ================= -->
+<!-- PRODUCTS -->
 <section class="products" id="products">
 
   <h2>Our Products</h2>
@@ -65,28 +50,25 @@
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="earbuds.jpg" alt="Wireless Earbuds">
+      <img src="earbuds.jpg">
       <h3>Wireless Earbuds</h3>
       <p>799 TK</p>
-      <button onclick="addToCart('Wireless Earbuds', 799)">Add to Cart</button>
+      <button onclick="addToCart('Earbuds', 799)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="watch.jpg" alt="Smart Watch">
+      <img src="watch.jpg">
       <h3>Smart Watch</h3>
       <p>1499 TK</p>
-      <button onclick="addToCart('Smart Watch', 1499)">Add to Cart</button>
+      <button onclick="addToCart('Watch', 1499)">Add to Cart</button>
     </div>
 
   </div>
 
 </section>
 
-<!-- ================= FLOAT CART BUTTON ================= -->
-<button class="open-cart" onclick="toggleCart()">🛒</button>
-
-<!-- ================= CART SIDEBAR ================= -->
-<<div id="cartSidebar" class="cart-sidebar">
+<!-- CART SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar">
 
   <h2>Your Cart 🛒</h2>
 
@@ -94,16 +76,17 @@
 
   <h3 id="total">Total: 0 TK</h3>
 
-  <!-- Checkout Button -->
   <button class="checkout-btn" onclick="checkoutWhatsApp()">
-    Proceed to Checkout 📲
+    Checkout 📲
   </button>
 
   <button onclick="toggleCart()">Close ❌</button>
 
 </div>
 
-<!-- ================= SCRIPT ================= -->
+<!-- FLOAT CART BUTTON -->
+<button class="open-cart" onclick="toggleCart()">🛒</button>
+
 <script src="script.js"></script>
 
 </body>
