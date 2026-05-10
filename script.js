@@ -12,7 +12,28 @@ function addToCart(name, price) {
 
   updateCart();
 }
+function updateCart() {
+  let total = 0;
+  let count = 0;
 
+  document.getElementById("cartItems").innerHTML = "";
+
+  cart.forEach(item => {
+    total += item.price * item.qty;
+    count += item.qty;
+
+    document.getElementById("cartItems").innerHTML += `
+      <p>${item.name} x${item.qty}</p>
+    `;
+  });
+
+  document.getElementById("total").innerText = "Total: " + total + " TK";
+  document.getElementById("cartCount").innerText = count;
+
+  // mobile cart sync
+  let mobile = document.getElementById("cartCountMobile");
+  if (mobile) mobile.innerText = count;
+}
 function updateCart() {
 
   let cartItems = document.getElementById("cartItems");
