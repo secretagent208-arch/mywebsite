@@ -12,28 +12,7 @@ function addToCart(name, price) {
 
   updateCart();
 }
-function updateCart() {
-  let total = 0;
-  let count = 0;
 
-  document.getElementById("cartItems").innerHTML = "";
-
-  cart.forEach(item => {
-    total += item.price * item.qty;
-    count += item.qty;
-
-    document.getElementById("cartItems").innerHTML += `
-      <p>${item.name} x${item.qty}</p>
-    `;
-  });
-
-  document.getElementById("total").innerText = "Total: " + total + " TK";
-  document.getElementById("cartCount").innerText = count;
-
-  // mobile cart sync
-  let mobile = document.getElementById("cartCountMobile");
-  if (mobile) mobile.innerText = count;
-}
 function updateCart() {
 
   let cartItems = document.getElementById("cartItems");
@@ -54,6 +33,10 @@ function updateCart() {
 
   document.getElementById("total").innerText = "Total: " + total + " TK";
   document.getElementById("cartCount").innerText = count;
+
+  // mobile sync (safe)
+  let mobile = document.getElementById("cartCountMobile");
+  if (mobile) mobile.innerText = count;
 }
 
 function toggleCart() {
@@ -63,7 +46,7 @@ function toggleCart() {
 function checkoutWhatsApp() {
 
   let phone = "8801322911626";
-  let msg = "Order:\n\n";
+  let msg = "🛒 Order:\n\n";
   let total = 0;
 
   cart.forEach(i => {
@@ -71,7 +54,7 @@ function checkoutWhatsApp() {
     total += i.price * i.qty;
   });
 
-  msg += "\nTotal: " + total + " TK";
+  msg += "\n💰 Total: " + total + " TK";
 
   window.open(
     "https://api.whatsapp.com/send?phone=" + phone + "&text=" + encodeURIComponent(msg),
