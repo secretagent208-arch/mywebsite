@@ -65,3 +65,14 @@ function checkoutWhatsApp() {
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
 }
+document.getElementById("search").addEventListener("keyup", function () {
+
+  let value = this.value.toLowerCase();
+  let products = document.querySelectorAll(".product-card");
+
+  products.forEach(p => {
+    let text = p.innerText.toLowerCase();
+    p.style.display = text.includes(value) ? "block" : "none";
+  });
+
+});
