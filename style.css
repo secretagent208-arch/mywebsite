@@ -147,4 +147,8 @@ button {
     padding: 15px;
     font-weight: bold;
   }
+}.dark input,
+.dark .product-card {
+  background: #222;
+  color: white;
 }
