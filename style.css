@@ -130,3 +130,21 @@ button {
 .product-card button:active {
   animation: pop 0.2s ease;
 }
+.mobile-cart {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-cart {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+  }
+}
