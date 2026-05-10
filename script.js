@@ -109,3 +109,6 @@ loadCart();
 function toggleCart() {
   document.getElementById("cartSidebar").classList.toggle("active");
 }
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
