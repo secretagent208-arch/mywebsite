@@ -1,4 +1,5 @@
 let cart = [];
+
 function addToCart(name, price) {
 
   let existing = cart.find(item => item.name === name);
@@ -11,9 +12,8 @@ function addToCart(name, price) {
 
   saveCart();
   displayCart();
-
-  document.getElementById("cartCount").textContent = getTotalItems();
 }
+
 function getTotalItems() {
   let total = 0;
 
@@ -23,6 +23,7 @@ function getTotalItems() {
 
   return total;
 }
+
 function displayCart() {
 
   let cartItems = document.getElementById("cartItems");
@@ -34,8 +35,7 @@ function displayCart() {
 
     cartItems.innerHTML += `
       <p>
-        ${item.name} - ${item.price} TK
-        (x${item.qty})
+        ${item.name} - ${item.price} TK (x${item.qty})
 
         <button onclick="increaseQty(${index})">+</button>
         <button onclick="decreaseQty(${index})">-</button>
@@ -47,7 +47,10 @@ function displayCart() {
 
   document.getElementById("total").innerText =
     "Total: " + total + " TK";
+
+  document.getElementById("cartCount").textContent = getTotalItems();
 }
+
 function increaseQty(index) {
   cart[index].qty += 1;
   saveCart();
@@ -63,9 +66,8 @@ function decreaseQty(index) {
 
   saveCart();
   displayCart();
-
-  document.getElementById("cartCount").textContent = getTotalItems();
 }
+
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
@@ -78,7 +80,6 @@ function loadCart() {
   }
 
   displayCart();
-  document.getElementById("cartCount").textContent = getTotalItems();
 }
 
 loadCart();
