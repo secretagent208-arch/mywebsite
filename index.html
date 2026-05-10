@@ -127,7 +127,19 @@
   </section>
 <script src="script.js"></script>
 
-<button class="open-cart" onclick="toggleCart()">🛒</button>
+<div id="cartSidebar" class="cart-sidebar">
+
+  <h2>Your Cart 🛒</h2>
+
+  <div id="cartItems"></div>
+
+  <h3 id="total">Total: 0 TK</h3>
+
+  <button onclick="checkoutWhatsApp()">Checkout 📲</button>
+
+  <button onclick="toggleCart()">Close ❌</button>
+
+</div>
   
 </body>
 
