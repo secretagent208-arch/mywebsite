@@ -80,6 +80,7 @@ function loadCart() {
   }
 
   displayCart();
+  document.getElementById("cartCount").textContent = getTotalItems();
 }
 
 loadCart();
