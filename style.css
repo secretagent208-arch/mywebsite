@@ -185,3 +185,11 @@ button:active {
     z-index: 999;
   }
 }
+.cart-sidebar {
+  transform: translateX(100%);
+  transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-sidebar.active {
+  transform: translateX(0);
+}
