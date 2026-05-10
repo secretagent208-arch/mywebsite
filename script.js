@@ -82,5 +82,27 @@ function loadCart() {
   displayCart();
   document.getElementById("cartCount").textContent = getTotalItems();
 }
+function checkoutWhatsApp() {
+
+  let phone = "8801322911626";
+  let message = "🛒 Order Details:\n\n";
+
+  let total = 0;
+
+  cart.forEach(item => {
+    message += item.name + " x" + item.qty + " = " + (item.price * item.qty) + " TK\n";
+    total += item.price * item.qty;
+  });
+
+  message += "\n💰 Total: " + total + " TK";
+
+  let url =
+    "https://api.whatsapp.com/send?phone=" +
+    phone +
+    "&text=" +
+    encodeURIComponent(message);
+
+  window.location.href = url;
+}
 
 loadCart();
