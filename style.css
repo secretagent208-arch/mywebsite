@@ -86,3 +86,35 @@ nav ul li a{
 .hero-image img{
   width:100%;
 }
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  nav ul{
+    flex-direction:column;
+    text-align:center;
+    gap:15px;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text{
+    width:100%;
+  }
+
+  .hero-image{
+    width:100%;
+    margin-top:40px;
+  }
+
+  .hero-text h1{
+    font-size:38px;
+  }
+
+}
