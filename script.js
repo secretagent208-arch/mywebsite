@@ -58,4 +58,20 @@ function addToCart(name, price) {
 }
 function addToCart() {
   alert("JS is working");
-}
+}let cartCount = 0;
+
+const buttons = document.querySelectorAll(".product-card button");
+
+buttons.forEach(function(button){
+
+button.addEventListener("click", function(){
+
+cartCount++;
+
+alert("Product Added to Cart 🛒");
+
+console.log("Cart Items:", cartCount);
+
+});
+
+});
