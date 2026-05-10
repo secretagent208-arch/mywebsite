@@ -193,3 +193,69 @@ button:active {
 .cart-sidebar.active {
   transform: translateX(0);
 }
+nav {
+  backdrop-filter: blur(10px);
+  background: rgba(17,17,17,0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.product-card {
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.product-card button {
+  background: #111;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card button:hover {
+  background: #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.open-cart {
+  animation: pulse 2s infinite;
+}
+.checkout-btn {
+  background: linear-gradient(135deg, #25D366, #1ebd5a);
+  box-shadow: 0 5px 15px rgba(37,211,102,0.3);
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+}
+.dark body {
+  background: #0f0f0f;
+}
+
+.dark .hero {
+  background: #1a1a1a;
+}
+
+.dark .product-card {
+  border: 1px solid #333;
+}
+@media (max-width: 768px) {
+  .products {
+    padding: 20px;
+  }
+
+  .cart-sidebar {
+    width: 100%;
+  }
+}
